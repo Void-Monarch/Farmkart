@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-pft_v$s9#s@1xwpiv51hm#0@%%t85f=3#)#l^c^up5y%!70(&0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["farmkart.onrender.com"]
 
 
 # Application definition
