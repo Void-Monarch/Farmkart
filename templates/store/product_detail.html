@@ -1,0 +1,212 @@
+{% extends 'homepage_site/home_nav.html' %}
+{% block content %}
+{% load static %}
+
+<style>
+  
+    .parallelogram {
+      width: 500px;
+      height: 50px;
+      transform: skew(20deg) scale(300%);
+      margin-left: -3rem;
+      margin-top: -1rem;
+      z-index: -5;
+    }
+
+    #card_item:hover{
+    transform: scale(93%);
+    transition: all;
+  }
+
+    </style>
+    <div class="parallelogram bg-gradient-to-br from-purple-700 to-transparent i fixed px-16 blur-lg"></div>
+    <div class="parallelogram bg-gradient-to-br from-purple-700 to-transparent i fixed px-16 blur-lg "></div>
+
+<div class="absolute py-20" style="z-index: -1;" >
+   
+
+<style>
+    
+h3 {
+  font-size: 0.7em;
+  letter-spacing: 1.2px;
+  color: #a6a6a6;
+}
+
+img {
+  max-width: 100%;
+  filter: drop-shadow(1px 1px 3px #a6a6a6);
+}
+
+/* ----- Product Section ----- */
+
+.card_detail_div{
+    display: inline-flex;
+    width: 100vw;
+}
+
+
+.product {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr;
+  margin: auto;
+  padding: 2.5em 0;
+  width: 800px;
+  height: 618px;
+  max-width: 800px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+/* ----- Photo Section ----- */
+.product__photo {
+  position: relative;
+}
+
+.photo-container {
+  position: absolute;
+  left: -4em;
+  display: grid;
+  grid-template-rows: 1fr;
+  width: 340px;
+  height: 539px;
+  border-radius: 6px;
+  box-shadow: 4px 4px 25px -2px rgba(0, 0, 0, 0.3);
+}
+
+.photo-main {
+  border-radius: 6px 6px 0 0;
+  background-color: #9be010;
+  background: radial-gradient(#e5f89e, #96e001);
+}
+
+
+.photo-main img {
+  position: absolute;
+  top: 2em;
+}
+
+
+
+
+/* ----- Informations Section ----- */
+.product__info {
+  padding: 0.8em 0;
+}
+
+.title h1 {
+  margin-bottom: 0.1em;
+  color: #4c4c4c;
+  font-size: 1.5em;
+  font-weight: 900;
+}
+.title span {
+  font-size: 0.7em;
+  color: #a6a6a6;
+}
+
+.price {
+  margin: 1.5em 0;
+  color: #ff3f40;
+  font-size: 1.2em;
+}
+.price span {
+  padding-left: 0.15em;
+  font-size: 2.9em;
+}
+
+.variant {
+  overflow: auto;
+}
+.variant h3 {
+  margin-bottom: 1.1em;
+}
+.variant li {
+  float: left;
+  width: 35px;
+  height: 35px;
+  padding: 3px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.variant li:first-child, .variant li:hover {
+  border: 1px solid #a6a6a6;
+}
+.variant li:not(:first-child) {
+  margin-left: 0.1em;
+}
+
+.description {
+  clear: left;
+  margin: 2em 0;
+  height: 110px;
+  max-height: 110px;
+}
+.description h3 {
+  margin-bottom: 1em;
+}
+.description ul {
+  font-size: 0.8em;
+  list-style: disc;
+  margin-left: 1em;
+}
+.description li {
+  text-indent: -0.6em;
+  margin-bottom: 0.5em;
+}
+
+.buy--btn {
+  padding: 1.5em 3.1em;
+  border: none;
+  border-radius: 7px;
+  font-size: 0.8em;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  color: #fff;
+  background-color: #ff3f40;
+  box-shadow: 2px 2px 25px -7px #4c4c4c;
+  cursor: pointer;
+}
+.buy--btn:active {
+  transform: scale(0.97);
+}
+</style>
+<div class="my-8 card_detail_div" >
+<section class="product">
+	<div class="product__photo">
+		<div class="photo-container">
+			<div class="photo-main">
+				<img src="{{ single_product.image.url }}" alt="green apple slice" class="scale-95">
+			</div>
+
+		</div>
+	</div>
+	<div class="product__info"> 
+		<div class="title">
+			<h1> {{ single_product.product_name }} </h1>
+			<span>Category: {{ single_product.category }} </span>
+		</div>
+		<div class="price">
+			Rs. <span> {{ single_product.price }} </span>
+		</div>
+		
+		<div class="description" >
+			<h3 class="uppercase">description</h3>
+			<ul>
+				<li>&nbsp {{ single_product.description }} </li>
+			</ul>
+		</div>
+    {% if single_product.stock <= 0 %}
+    
+   <span style="color:red;font-size:24px;" class="border-4" >&nbsp; OUT OF STOCK  &nbsp;</span>
+
+    {% else %}
+    <a href="{% url 'add_cart' single_product.id %}">
+		<button class="buy--btn mt-24">ADD TO CART</button>
+    </a>
+    {% endif %}
+	</div>
+</section>
+</div>
+{% endblock %}

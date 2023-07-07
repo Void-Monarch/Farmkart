@@ -1,0 +1,16 @@
+{% load static %}
+{% autoescape off %}
+<BR>
+Hi {user.first_name},
+
+Plase click on below link to verify ↓
+
+link:<span> http://{{domain}}{% url 'activate' uidb64=uid token=token %} </span> 
+<BR><BR>
+<h3>
+    In reguards,
+    FarmKart
+    <img src="{% static 'sitelogo\logowhiteside.png' %}" alt="logo_farmkart">
+</h3>
+
+{% endautoescape %}

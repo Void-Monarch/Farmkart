@@ -1,0 +1,110 @@
+{% extends 'homepage_site/home_nav.html' %}
+{% block content %}
+{% load static %}
+
+<style>
+  
+            .parallelogram {
+              width: 500px;
+              height: 50px;
+              transform: skew(20deg) scale(300%);
+              margin-left: -3rem;
+              margin-top: -1rem;
+              z-index: -5;
+            }
+
+            </style>
+            <div class="parallelogram bg-gradient-to-br from-purple-700 to-transparent i fixed px-16 blur-lg"></div>
+            <div class="parallelogram bg-gradient-to-br from-purple-700 to-transparent i fixed px-16 blur-lg "></div>
+
+<div class="absolute pt-20" style="z-index: -1;" >
+
+  <style>
+    .parallelograms {
+      width: 400px;
+      height: 70px;
+      position: absolute;
+      right: 0;
+      transform: skew(20deg) scale(300%) rotateX(180deg) rotate(20deg);
+      margin-top: 9rem;
+      z-index: -5;
+    }
+    </style>
+    <div class="parallelograms bg-gradient-to-br from-green-700 to-transparent i fixed px-16 blur-lg"></div>
+
+ <div class="relative ">
+    <iframe src="{% url 'home_slider' %}" frameborder="0" class="" style="width:100vw;height:50vh;">
+    </iframe>
+  </div>
+
+  <BR><BR><BR><BR><BR>
+    <center>
+  <hr width="60%" class="bg-red-500 px-4" style="height: 2px;" >
+    </center>
+
+    <!-- product card -->
+<BR>
+<a href="{% url 'store' %}">
+<style>
+  #viewmore:hover{
+    opacity: 100%;
+    color: black;
+    font-weight: 700;
+  }
+
+  #card_item:hover{
+    transform: scale(93%);
+    transition: all;
+  }
+
+</style>
+
+<h4 class="text-slate-800 opacity-90 mr-16 inline-block absolute" id="viewmore" style="right: 0;font-family: lato;" >View More</h4>  
+</a>
+<BR><br>
+
+    <section class="product mx-14 ">
+      {% for product in products %}
+      <a href="{{ product.get_url }}">
+      <div class="product_overview justify-center inline-block shadow-md hover:shadow-rose-500 shadow-slate-400 border bg-white rounded-md scale-90 " style="width: 351px;max-width: 351px; height: 385px;max-height: 385px;" id="card_item">
+        
+        <h1 class="text-center mt-3 font-bold text-xl mb-0 " style="font-family:lato;">
+          {{product.product_name}}
+        </h1>
+
+        <div class="product_img">
+          
+          <img src="{{product.image.url}}" alt="green apple slice" class=" object-cover border scale-90 rounded" style="margin-top: -.5rem;filter: brightness(.9) contrast(1); ;width: 351px;max-width: 351px; height: 315px;max-height: 315px;">
+          
+        </div>
+
+        <h2 class="text-center " style="font-family: lato;">
+          Rs. {{product.price}}
+        </h2>
+
+      </div>
+      </a>
+      {% endfor %}
+
+    </section>
+
+
+    <div class="footer mt-24 pl-8 bg-gradient-to-br from-transparent to-green-500 mb-0" >
+      <footer class="pt-8 inline-block" style="height: 24rem;">
+        <div class="pt-8" >
+          <img src="{% static 'sitelogo/Screenshot_2023-01-08_160118-removebg-preview.png' %}"  class="" alt="logo" style="height: 8rem;"/>
+        <div>
+
+          <div class="absolute bottom-4 mx-16" style="text-transform: uppercase;word-spacing: 20vw;">
+            <a href="#"><span>Facebook</span></a> <a href="#"><span>Twitter</span></a> <a href="#"><span>Snapchat</span></a> <a href="#"><span>Instagram</span></a> 
+          </div>
+
+      </footer>
+    </div>
+    
+</div>
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,221 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- basic -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- mobile metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <!-- site metas -->
+  <title>About Us</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- fevicon -->
+  <link rel="icon" href ="{% static 'sitelogo/logosym.ico' %}" type = "image/x-icon">
+
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="{% static 'aboutus/css/bootstrap.min.css' %}">
+  <!-- style css -->
+  <link rel="stylesheet" href="{% static 'aboutus/css/style.css' %}">
+  <!-- Responsive-->
+  <link rel="stylesheet" href="{% static 'aboutus/css/responsive.css' %}">  
+  <!-- Scrollbar Custom CSS -->
+  <link rel="stylesheet" href="{% static 'aboutus/css/jquery.mCustomScrollbar.min.css' %}">
+  <!-- Tweaks for older IEs-->
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+<!-- body -->
+
+<body class="main-layout">
+  <!-- loader  -->
+
+  <!-- end loader -->
+  <!-- header -->
+  <header>
+    <!-- header inner -->
+    <div class="header-top">
+      <div class="header">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xl-2 col-lg-4 col-md-4 col-sm-3 col logo_section">
+              <div class="full">
+                <div class="center-desk">
+                  <div class="logo">
+                    <a href="{% url 'homepage_site' %}"><img src="{% static 'sitelogo/logowhiteside.png' %}" alt="sitelogo" /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-10 col-lg-8 col-md-8 col-sm-9">
+         
+               <div class="menu-area">
+                <div class="limit-box">
+                  <nav class="main-menu ">
+                    <ul class="menu-area-main">
+                      <li class="active"> <a href="{% url 'homepage_site' %}">Home</a> </li>
+                      <li> <a href="{% url 'login' %}">Login</a> </li>
+                      <li> <a href="">Contact Us</a> </li>
+                     </ul>
+                   </nav>
+                 </div>
+               </div> 
+              </div>
+           </div>
+         </div>
+       </div>
+     </div>
+
+     <section class="slider_section">
+        <div style="position: absolute;top:10vh;right: 8rem;" >
+            <img src="{% static 'aboutus/images/img2.png' %}" style="height:60vh;">
+          </div>
+            <div class="container-fluid padding_dd" style="position: relative;top:-5vh">
+                <div class="row">
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                    <div class="text-bg">
+                     <span>Welcome To FarmKart</span>
+                      <h1 style = "font-size:42px;">Farm Produce Shop</h1>
+                      <p>We believe that everyone should have access to fresh, healthy, and sustainably grown produce. That's why we've created this website, which allows you to purchase directly from the source. By cutting out the middleman, we're able to offer you fresher, healthier, and more sustainably grown produce at a lower price.</p>
+                    
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                    
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+          </div>
+</section>
+</div>
+</header>
+
+
+
+<!-- about  -->
+<div id="about" class="about">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+        <div class="about-box">
+          <h2>About us</h2><BR><br>
+          <p>We believe in the power of connecting people directly with the farmers who grow their food. That's why we've created a platform that allows you to purchase produce directly from the source. By cutting out the middleman, we're able to offer you fresher, healthier, and more sustainably grown produce at a lower price.</p>
+        </div>
+      </div>
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 padding_rl">
+        <div class="about-box_img">
+          <figure><img src="{% static 'aboutus/images/about.jpg' %}" alt="#" /></figure>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- end abouts -->
+
+
+
+<!-- vegetable -->
+<div id="vegetable" class="vegetable">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div  class="titlepage">
+          <h2> OUR <strong class="llow"> Mission </strong> </h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 ">
+        <div class="vegetable_shop">
+          <h3>To Be The Best</h3>
+          <p>Our mission is to support small family farms and to cultivate a more sustainable and equitable food system. We've partnered with a network of local farms to bring you a diverse selection of seasonal produce. When you shop with us, you're not only getting delicious, nourishing food, you're also supporting your local agriculture and building stronger communities. </p>
+        </div>
+      </div>
+       <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 ">
+        <div class="vegetable_img">
+         <figure><img src="{% static 'aboutus/images/v1.jpg' %}" alt="#"/></figure>
+         <span>01</span>
+        </div>
+      </div>
+       <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 ">
+        <div class="vegetable_img margin_top">
+         <figure><img src="{% static 'aboutus/images/v2.jpg' %}" alt="#"/></figure>
+         <span>02</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end vegetable -->
+<div style="height: 20vh;">
+
+
+</div>
+    <!--  footer -->
+    <footr>
+      <div class="footer ">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+             <a href="{% url 'homepage_site' %}" class="" style="position: relative;bottom:2rem;"> <img src="{% static 'sitelogo/Screenshot_2023-01-08_160118-removebg-preview.png' %}" alt="logo" style="height: 8rem;"/></a>
+            </div>
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
+              <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 ">
+                  <div class="address">
+                    <h3>Address </h3>
+                    <ul class="loca">
+                      <li>
+                        <a href="#"></a>It is a long established fact 
+                        <br>that a reader will be  </li>
+                        <li>
+                          <a href="#"></a>(+00 1234567890) </li>
+                          <li>
+                            <a href="#"></a>harsh2232003@gmail.com</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="address">
+                          <h3>Social Link</h3>
+                          <ul class="Menu_footer">
+                            <li class="active"> <a href="#">Twitter</a> </li>
+                            <li><a href="#">Facebook</a> </li>
+                            <li><a href="#">Instagram</a> </li>
+                            <li><a href="#">Linkdin</a> </li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+              <div class="copyright">
+                
+              </div>
+            </div>
+          </footer>
+          <!-- end footer -->
+          <!-- Javascript files-->
+          <script src="{% static 'js/jquery.min.js' %}"></script>
+          <script src="{% static 'js/popper.min.js' %}"></script>
+          <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+          <script src="{% static 'js/jquery-3.0.0.min.js"></script>
+          <script src="{% static 'js/plugin.js' %}"></script>
+          <!-- sidebar -->
+          <script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+          <script src="{% static 'js/custom.js' %}"></script>
+          <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+
+          
+</body>
+
+</html>

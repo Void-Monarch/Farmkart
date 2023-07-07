@@ -1,0 +1,202 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>
+        FarmKart | Fresh Farm Produce
+    </title>
+
+
+    <link rel="icon" href ="{% static 'sitelogo/logosym.ico' %}" type = "image/x-icon">
+
+    <link rel="stylesheet" type="text/css"
+
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+</head>
+<body class="overflow-x-hidden bg-cover bg-slate-200">
+
+    <header class="bg-transparent fixed" >
+
+      <div class="container mx-auto px-4 py-3 flex items-center bg-transparent" style="width: 100vw;">
+      
+          <!-- logo -->
+          <div class="mr-auto md:w-48 flex-shrink-0">
+            <a href="{% url 'homepage_site' %}">
+            <img class="h-8 md:h-14" src="{% static 'sitelogo/logowhiteside.png' %}" alt="logo_site"></a>
+          </div>
+        
+      
+          <!-- search -->
+          <form method="post" action="{% url 'homepage_site' %}" class="mr-4">
+            {% csrf_token %}
+            
+          <div class="max-w-xs xl:max-w-lg 2xl:max-w-2xl  bg-gray-100 rounded-md hidden xl:flex items-center">
+            
+            <!-- dropdown -->
+            <select class="bg-transparent uppercase font-bold text-sm p-4 mr-4" name="category_select" >
+            
+              <option class="" id="all_categories" value="all_categories" name="all_categories" >all categories</option>
+            
+              {% for categories in links %}              
+                <option class="" name="{{ categories.slug }}" value="{{ categories.slug }}" >{{ categories.category_name }}</option>
+              {% endfor %}
+            
+            </select>
+            
+
+            <!-- dropdown end -->
+                <!-- searchbar -->
+            <!-- <input class="border-l border-gray-300 bg-transparent font-semibold text-sm pl-4 h-12 w-64" type="search" name="search_bar" placeholder="I'm searching for ..."> -->
+            <button href="" name="search" type="submit"><svg class="ml-auto h-5 px-4 text-gray-500" aria-hidden="true" focusable="false" data-prefix="far" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-search fa-w-16 fa-9x"><path fill="currentColor" d="M508.5 468.9L387.1 347.5c-2.3-2.3-5.3-3.5-8.5-3.5h-13.2c31.5-36.5 50.6-84 50.6-136C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c52 0 99.5-19.1 136-50.6v13.2c0 3.2 1.3 6.2 3.5 8.5l121.4 121.4c4.7 4.7 12.3 4.7 17 0l22.6-22.6c4.7-4.7 4.7-12.3 0-17zM208 368c-88.4 0-160-71.6-160-160S119.6 48 208 48s160 71.6 160 160-71.6 160-160 160z"></path></svg></button>
+ 
+          </form>
+        </div>
+      
+        
+      
+          <!-- buttons -->
+          <nav class="contents" >
+            <ul class="xl:w-48 flex items-center justify-end">
+              <li class="lg:ml-4 relative inline-block">
+                <a class="" href="{% url 'homepage_site' %}">
+                  <svg width="24" height="24" class=" text-gray-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6 22.8787C4.34315 22.8787 3 21.5355 3 19.8787V9.87866C3 9.84477 3.00169 9.81126 3.00498 9.77823H3C3 9.20227 3.2288 8.64989 3.63607 8.24262L9.87868 2.00002C11.0502 0.828445 12.9497 0.828445 14.1213 2.00002L20.3639 8.24264C20.7712 8.6499 21 9.20227 21 9.77823H20.995C20.9983 9.81126 21 9.84477 21 9.87866V19.8787C21 21.5355 19.6569 22.8787 18 22.8787H6ZM12.7071 3.41423L19 9.70713V19.8787C19 20.4309 18.5523 20.8787 18 20.8787H15V15.8787C15 14.2218 13.6569 12.8787 12 12.8787C10.3431 12.8787 9 14.2218 9 15.8787V20.8787H6C5.44772 20.8787 5 20.4309 5 19.8787V9.7072L11.2929 3.41423C11.6834 3.02371 12.3166 3.02371 12.7071 3.41423Z" fill="currentColor" /> </svg>
+                </a>
+              </li>
+              <li class="lg:ml-4 relative inline-block">
+
+                <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script> 
+  <div x-data="{ open: false }" class="">
+      <div @click="open = !open" class="relative border-b-4 border-transparent" :class="{'border-indigo-700 transform transition duration-300 ': open}" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100">
+        <div class="flex justify-center items-center cursor-pointer">
+
+            <div class="cursor-pointer">
+              <svg class="h-9 lg:h-10 p-2 text-gray-500 text-left" aria-hidden="true" focusable="false" data-prefix="far" data-icon="user" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-user fa-w-14 fa-9x"><path fill="currentColor" d="M313.6 304c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4 14.6 0 38.3 16 89.6 16 51.7 0 74.9-16 89.6-16 47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0 80 64.5 80 144s64.5 144 144 144zm0-240c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z"></path></svg>
+            </div>
+
+        </div>
+        <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute w-40 px-2 py-3 dark:bg-gray-800 bg-white rounded-lg shadow border dark:border-transparent mt-5 " style="box-shadow: 0 0 15px gray;">
+          <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+            <div>
+              {% if user.id is not none %}
+              {{ user.username }}
+              {% else %}
+              Guest
+              {% endif %}
+            
+            </div>
+            
+              <div class="font-medium truncate">
+                {% if user.id is not none %}
+                {{ user.email }}
+                {% else %}
+                Guest login
+                {% endif %}              
+              </div>
+          
+              </div>
+          <center>
+          <hr class="w-3/4">
+        </center>
+          <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
+            <li>
+              {% if user.id is not none %}
+              <a href="{% url 'dashboard' %}" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">Account</a>
+            </li>
+            
+            {% else %}
+          <div class="block font-bold px-4 py-2 bg-red-300 dark:hover:bg-gray-600 dark:hover:text-white ">  Required to Login </div>
+            {% endif %}
+
+          </ul>
+          <center>
+            <hr class="w-3/4">
+          </center>
+          <div class="py-2">
+            {% if user.id is none %}
+            <a href="{% url 'login' %}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-green-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Login</a>
+            {% else %}
+            <a href="{% url 'logout' %}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+  </div>   
+              </li>
+
+              <li class="lg:ml-4 relative inline-block">
+                <a class="" href="{% url 'aboutus' %}">
+                  <svg class="h-9 lg:h-10 p-2 text-gray-500" aria-hidden="true" focusable="false" data-prefix="far" data-icon="user" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <g> <path fill="none" d="M0 0H24V24H0z"/> <path d="M12 19c.828 0 1.5.672 1.5 1.5S12.828 22 12 22s-1.5-.672-1.5-1.5.672-1.5 1.5-1.5zm0-17c3.314 0 6 2.686 6 6 0 2.165-.753 3.29-2.674 4.923C13.399 14.56 13 15.297 13 17h-2c0-2.474.787-3.695 3.031-5.601C15.548 10.11 16 9.434 16 8c0-2.21-1.79-4-4-4S8 5.79 8 8v1H6V8c0-3.314 2.686-6 6-6z"/> </g> </svg>
+                </a>
+              </li>
+              
+              <li class="lg:ml-4 relative inline-block">
+                <a class="" href="{% url 'cart' %}">
+                  <!-- cart count -->  
+                  <div class="absolute -top-1 right-0 z-10 bg-yellow-400 text-xs font-bold px-1 py-0.5 rounded-sm">
+                    {{ total_items }}
+                </div>
+                  <svg class="h-9 lg:h-10 p-2 text-gray-500" aria-hidden="true" focusable="false" data-prefix="far" data-icon="shopping-cart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-shopping-cart fa-w-18 fa-9x"><path fill="currentColor" d="M551.991 64H144.28l-8.726-44.608C133.35 8.128 123.478 0 112 0H12C5.373 0 0 5.373 0 12v24c0 6.627 5.373 12 12 12h80.24l69.594 355.701C150.796 415.201 144 430.802 144 448c0 35.346 28.654 64 64 64s64-28.654 64-64a63.681 63.681 0 0 0-8.583-32h145.167a63.681 63.681 0 0 0-8.583 32c0 35.346 28.654 64 64 64 35.346 0 64-28.654 64-64 0-18.136-7.556-34.496-19.676-46.142l1.035-4.757c3.254-14.96-8.142-29.101-23.452-29.101H203.76l-9.39-48h312.405c11.29 0 21.054-7.869 23.452-18.902l45.216-208C578.695 78.139 567.299 64 551.991 64zM208 472c-13.234 0-24-10.766-24-24s10.766-24 24-24 24 10.766 24 24-10.766 24-24 24zm256 0c-13.234 0-24-10.766-24-24s10.766-24 24-24 24 10.766 24 24-10.766 24-24 24zm23.438-200H184.98l-31.31-160h368.548l-34.78 160z"></path></svg>
+                </a>
+              </li>
+            </ul>
+          </nav>
+      
+          <!-- cart-cost -->
+          <div class="ml-4 hidden sm:flex flex-col font-bold mr-4">
+           
+          </div>
+        </div>
+
+        
+        
+        <hr>
+      </header>
+
+      <!-- aleart box login  -->
+      
+      <!-- <script>
+        function showHtmlDiv() {
+  var htmlShow = document.getElementById("msg-alert");
+  if (htmlShow.style.display === "none") {
+    htmlShow.style.display = "block";
+  } else {
+    htmlShow.style.display = "none";
+  }
+}
+      </script>
+      
+    <section class="flex justify-center py-28" id="msg-alert" >
+    <div class="relative flex justify-center" >
+      <div class="flex w-96 shadow-lg rounded-lg">
+        <div class="bg-green-600 py-4 px-6 rounded-l-lg flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="text-white fill-current" viewBox="0 0 16 16" width="20" height="20"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg>
+        </div>
+        <div class="px-4 py-6 bg-white rounded-r-lg flex justify-between items-center w-full border border-l-transparent border-gray-200">
+          <div>Successfull Login </div>
+          <button onclick=showHtmlDiv()>
+            <svg xmlns="http://www.w3.org/2000/svg" class="fill-current text-gray-700" viewBox="0 0 16 16" width="20" height="20"><path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    </section> -->
+
+    <!-- aleart box login end -->
+<div class="container">
+{% block content %}
+
+{% endblock content %}
+</div>
+
+</body>
+</html>

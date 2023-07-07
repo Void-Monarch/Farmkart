@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load static %}
+{% url 'login' as logurl %}
+<html lang="en" class="overflow-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>
+      {% if request.path == logurl %}
+        Login
+        {% else %}
+        Register
+        {% endif %}  
+    
+    </title>
+    <link rel="icon" href ="{% static 'sitelogo/logosym.ico' %}" type = "image/x-icon">
+
+</head>
+<body>
+    <!-- component -->
+<header class="header sticky top-0 bg-white shadow-md flex items-center justify-between px-8 py-02">
+    <!-- logo -->
+    <h1 class="w-3/12">
+        <a href="{% url 'homepage_site' %}">
+          <img src="{% static 'sitelogo\logowhiteside.png' %}" alt="logo_farmkart" class="w-4/12">
+        </a>
+    </h1>
+
+    <!-- navigation -->
+    <nav class="nav font-semibold text-lg">
+        <ul class="flex items-center">
+          <a href="{% url 'homepage_site' %}">
+            <li class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer active">
+              Home
+          </a>
+            </li>
+            <li class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">
+              <a href="{% url 'store' %}">Products</a>
+            </li>
+            <a href="{% url 'aboutus' %}">
+            <li class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">
+              About Us
+          </a>
+            </li>
+            <li class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">
+
+              {% if request.path == logurl %}
+              <a href="{% url 'register' %}">Register
+                {% else %}
+              <a href="{% url 'login' %}">Login
+                {% endif %}
+
+                </a>
+            </li>
+            <li class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">
+              <a href="/admin">Admin</a>
+            </li>
+        </ul>
+    </nav>
+
+</header>
+
+      {% block body_block %}
+
+      {% endblock body_block %}
+
+</body>
+</html>

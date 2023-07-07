@@ -1,0 +1,88 @@
+{% extends 'homepage_site/home_nav.html' %}
+{% block content %}
+{% load static %}
+
+
+<style>
+  
+    .parallelogram {
+      width: 500px;
+      height: 50px;
+      transform: skew(20deg) scale(300%);
+      margin-left: -3rem;
+      margin-top: -1rem;
+      z-index: -5;
+    }
+
+    #card_item:hover{
+    transform: scale(93%);
+    transition: all;
+  }
+
+    </style>
+    <div class="parallelogram bg-gradient-to-br from-purple-700 to-transparent i fixed px-16 blur-lg"></div>
+    <div class="parallelogram bg-gradient-to-br from-purple-700 to-transparent i fixed px-16 blur-lg "></div>
+
+<div class="absolute py-20" style="z-index: -1;" >
+  <style>
+    .parallelograms {
+      width: 400px;
+      height: 70px;
+      position: absolute;
+      right: 0;
+      transform: skew(20deg) scale(300%) rotateX(180deg) rotate(20deg);
+      margin-top: 9rem;
+      z-index: -5;
+    }
+    </style>
+    <div class="parallelograms bg-gradient-to-br from-green-700 to-transparent i fixed px-16 blur-lg"></div>
+    <div class="bg-slate-300 mx-20 py-6 text-center text-8xl font-light" style="font-family: 'agency fb' ; width: 90vw;">
+        <img src="{% static 'media/carticon.png' %}" alt="" class="inline h-28 p-0 m-0"> <span>Store </span>
+    </div>
+
+
+    <!-- product card -->
+    
+    <div class=" py-4 my-2">
+    <span class="mx-20 text-xl">
+    Search Results: <B>{{product_count}}</B>
+    </span>
+    </div>
+    <center>
+    <hr class="h-1 bg-gray-500 " style="width:300px">
+    </center>  
+    <BR>
+
+
+        <section class="product mx-20 relativea" >
+            <center> 
+              
+          {% for product in products %}
+          
+          <a href="{{ product.get_url }}" >
+          <div class="product_overview justify-center inline-block shadow-md border hover:shadow-red-500 bg-white rounded-md scale-90  " style="width: 351px;max-width: 351px; height: 385px;max-height: 385px;" id="card_item">
+            
+            <h1 class="text-center mt-3 font-bold text-xl mb-0 " style="font-family:lato;">
+              {{product.product_name}}
+            </h1>
+    
+            <div class="product_img">
+              
+              <img src="{{product.image.url}}" alt="green apple slice" class=" object-cover border scale-90 rounded " style="margin-top: -.5rem ;width: 351px;max-width: 351px; height: 315px;max-height: 315px;">
+              
+            </div>
+    
+            <h2 class="text-center " style="font-family: lato;">
+              Rs. {{product.price}}
+            </h2>
+    
+          </div>
+        </a>
+          {% endfor %}
+       </center>
+        </section>
+     
+
+</div>
+
+{% endblock %}

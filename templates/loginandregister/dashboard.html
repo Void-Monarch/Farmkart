@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+{% load static %}
+{% load myfilters %}
+<html lang="en" class="overflow-y-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>
+    DashBoard
+    </title>
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/details-more.css' rel='stylesheet'>
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/box.css' rel='stylesheet'>
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/home-alt.css' rel='stylesheet'>
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/comment.css' rel='stylesheet'>
+    <link rel="icon" href ="{% static 'sitelogo/logosym.ico' %}" type = "image/x-icon">
+
+</head>
+<body>
+    <!-- component -->
+<header class="header sticky top-0 bg-white shadow-md flex items-center justify-between px-8 py-02">
+    <!-- logo -->
+    <h1 class="w-3/12">
+        <a href="{% url 'homepage_site' %}">
+          <img src="{% static 'sitelogo\logowhiteside.png' %}" alt="logo_farmkart" class="w-4/12">
+        </a>
+    </h1>
+
+    <!-- navigation -->
+    <nav class="nav font-semibold text-lg">
+        <ul class="flex items-center">
+          <a href="{% url 'homepage_site' %}">
+            <li class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer active">
+              Home
+          </a>
+            </li>
+            <li class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">
+              <a href="{% url 'store' %}">Products</a>
+            </li>
+            <a href="{% url 'aboutus' %}">
+            <li class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">
+              About Us
+          </a>
+            </li>
+
+        </ul>
+    </nav>
+
+</header>
+
+<section>
+    <div class="row">
+        
+        <div class="flex float-left bg-white shadow-lg border-transparent shadow-black h-screen relative" style="width: 15vw;">
+            
+            <div class="container py-6 px-2 block ">
+ 
+                <ul class="flex flex-col">
+                    
+                    <button onclick=showHtmlDivPer()>
+                    <li class="flex flex-row mb-6">
+                       <div class="select-none cursor-pointer shadow-md shadow-black bg-gray-200 rounded-md flex flex-1 items-center p-3  transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-lg">
+                         <div class="flex flex-col rounded-md mr-4">
+                            <i class="gg-details-more"></i>
+                         </div>
+                         <div>Personal Details</div>
+                       </div>
+                     </li>
+                     </button>
+
+                     <button onclick=showHtmlDivOrd()>
+
+                     <li class="flex flex-row mb-6">
+                        <div class="select-none cursor-pointer shadow-md shadow-black  bg-gray-200 rounded-md flex flex-1 items-center p-3  transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-lg">
+                          <div class="flex flex-col rounded-md mr-4">
+                            <i class="gg-box"></i>
+                          </div>
+                          <div class="">Orders</div>
+                        </div>
+                      </li>
+                      </button>
+
+
+                    <button onclick=showHtmlDivBill()>
+                      <li class="flex flex-row mb-6">
+                        <div class="select-none cursor-pointer  shadow-md shadow-black bg-gray-200 rounded-md flex flex-1 items-center p-3  transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-lg">
+                          <div class="flex flex-col rounded-md mr-4">
+                            <i class="gg-home-alt"></i>
+                          </div>
+                          <div>Billing Address</div>
+                        </div>
+                      </li>
+                    </button>
+
+                      <!-- <li class="flex flex-row mb-6">
+                        <div class="select-none cursor-pointer  shadow-md shadow-black bg-gray-200 rounded-md flex flex-1 items-center p-3  transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-lg">
+                          <div class="flex flex-col rounded-md mr-4">
+                            <i class="gg-comment"></i>
+                          </div>
+                          <div>Complains</div>
+                        </div>
+                      </li> -->
+                          
+                 </ul>
+                 
+                 
+                 <div class="h-48 bg-gray-300 mt-80 border-2 border-transparent rounded-md">
+                    <div class="pt-5">
+    <img src="{% static 'sitelogo\logowhiteside.png' %}" alt="logo_farmkart">
+                        
+                    </div>
+                 </div>
+
+               </div>
+        </div>
+
+        <!-- DATA -->
+
+        <div class="flex bg-gray-300 h-screen" style="width: 85vw;">
+
+            <div class="w-full container " id="Personal">
+                
+                <div class="inline-flex">
+
+                
+                <div class="bg-white rounded-md m-8 p-3 shadow-md inline-flex items-center " style="box-shadow: 0 0 15px rgb(132, 132, 132);font-family: lato; ">
+                    
+                    <h2>First Name : </h2>
+                    <span class="px-3">
+                        <input type="text" class='w-full pl-10 pr-3 py-2 rounded-lg border-2 outline-none border-indigo-500' value="{{ user.first_name }}" readonly >
+                    </span> 
+
+                </div>
+
+                </div>
+
+                <div class="inline-flex">
+
+                <div class="bg-white rounded-md m-8 p-3 shadow-md inline-flex items-center " style="box-shadow: 0 0 15px rgb(132, 132, 132);font-family: lato; ">
+                    
+                    <h2>Last Name : </h2>
+                    <span class="px-3">
+                        <input type="text" class='w-full pl-10 pr-3 py-2 rounded-lg border-2 outline-none border-indigo-500' value="{{ user.last_name }}" readonly  >
+                    </span> 
+
+                </div>
+
+                </div>
+
+                <div class="inline-flex">
+
+                    <div class="bg-white rounded-md m-8 p-3 shadow-md inline-flex items-center " style="box-shadow: 0 0 15px rgb(132, 132, 132);font-family: lato; ">
+                        
+                        <h2>Username : </h2>
+                        <span class="px-3">
+                            <input type="text" class='w-full pl-10 pr-3 py-2 rounded-lg border-2 outline-none border-indigo-500' value="{{ user.username }}"  readonly  >
+                        </span> 
+    
+                    </div>
+    
+                </div>
+
+                <div class="inline-flex">
+
+                    <div class="bg-white rounded-md m-8 p-3 shadow-md inline-flex items-center " style="box-shadow: 0 0 15px rgb(132, 132, 132);font-family: lato; ">
+                        
+                        <h2>Email : </h2>
+                        <span class="px-3">
+                            <input type="text" class='w-full pl-10 pr-3 py-2 rounded-lg border-2 outline-none border-indigo-500' value="{{ user.email }}"  readonly  >
+                        </span> 
+    
+                    </div>
+    
+                </div>
+
+                <div class="inline-flex">
+
+                    <div class="bg-white rounded-md m-8 p-3 shadow-md inline-flex items-center " style="box-shadow: 0 0 15px rgb(132, 132, 132);font-family: lato; ">
+                        
+                        <h2>Phone Number : </h2>
+                        <span class="px-3">
+                            <input type="text" class='w-full pl-10 pr-3 py-2 rounded-lg border-2 outline-none border-indigo-500' value="{{ user.phone_number }}"  readonly  >
+                        </span> 
+    
+                    </div>
+    
+                </div>
+
+            </div>
+
+            <div class="w-full container " id="Billing" style="display: none;">
+                <form method="POST" action="{% url 'dashboard' %}" name="billing">
+                    {% csrf_token %}
+                <div class="inline">
+
+                    <div class="bg-white rounded-md m-8 p-3 shadow-md inline-block items-center " style="box-shadow: 0 0 15px rgb(132, 132, 132);font-family: lato; ">
+                        
+                        <h2>Billing Address : </h2>
+
+                    </div>
+    
+                </div>
+<br>
+<div class="block">
+
+    <div class="bg-white rounded-md m-8 p-3 ml-32 shadow-md " style="box-shadow: 0 0 15px rgb(132, 132, 132);font-family: lato; ">
+        
+        <div class="px-3">
+        <input class='w-full pl-10 pr-3 py-2 rounded-lg border-2 outline-none border-indigo-500' value="{{ user.billing_address }}" readonly>
+        </div> 
+
+    </div>
+        
+</div>
+<div class="inline">
+
+    <div class="bg-white rounded-md m-8 p-3 shadow-md inline-block items-center " style="box-shadow: 0 0 15px rgb(132, 132, 132);font-family: lato; ">
+        
+                    <input type="submit" class="block w-24 right-12 absolute bg-indigo-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2" value="save">
+                    <h2>New Billing Address : </h2> 
+
+    </div>
+
+</div>
+                <div class="block">
+
+                    <div class="bg-white rounded-md m-8 p-3 ml-32 shadow-md " style="box-shadow: 0 0 15px rgb(132, 132, 132);font-family: lato; ">
+                        
+                        <div class="px-3">
+                        {{ user_form.billing_address|addclass:'w-full pl-10 pr-3 py-2 rounded-lg border-2 outline-none border-indigo-500' }}
+                        </div> 
+    
+                    </div>                        
+                </div>
+                </form>
+            </div>
+
+
+
+            <div class="w-full container " id="orders" style="display: none;">
+                
+              <div class="inline">
+
+                <div class="bg-white rounded-md m-8 p-3 shadow-md inline-block items-center " style="box-shadow: 0 0 15px rgb(132, 132, 132);font-family: lato; ">
+                    
+                    <h2>No orders </h2>
+
+                </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+    </div>
+</section>
+
+<script>
+    function showHtmlDivPer() {
+var htmlShow = document.getElementById("Personal");
+var htmlShow2 = document.getElementById("Billing")
+var htmlShow3 = document.getElementById("orders")
+if (htmlShow.style.display === "none") {
+htmlShow.style.display = "block";
+htmlShow2.style.display = "none";
+htmlShow3.style.display = "none";
+} else {
+htmlShow.style.display = "none";
+}
+}
+
+    function showHtmlDivBill(){
+        var htmlShow = document.getElementById("Billing");
+        var htmlShow2 = document.getElementById("Personal");
+        var htmlShow3 = document.getElementById("orders");
+if (htmlShow.style.display === "none") {
+htmlShow.style.display = "block";
+htmlShow2.style.display = "none";
+htmlShow3.style.display = "none";
+} else {
+htmlShow.style.display = "none";
+}
+    }
+
+    function showHtmlDivOrd(){
+        var htmlShow = document.getElementById("orders");
+        var htmlShow2 = document.getElementById("Billing");
+        var htmlShow3 = document.getElementById("Personal");
+if (htmlShow.style.display === "none") {
+htmlShow.style.display = "block";
+htmlShow2.style.display = "none";
+htmlShow3.style.display = "none";
+} else {
+htmlShow.style.display = "none";
+}
+    }
+  </script>
+
+
+
+
+
+
+
+</body>
+</html>

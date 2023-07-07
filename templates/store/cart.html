@@ -1,0 +1,144 @@
+{% extends 'homepage_site/home_nav.html' %}
+{% block content %}
+{% load static %}
+
+<link href='https://unpkg.com/css.gg@2.0.0/icons/css/close-o.css' rel='stylesheet'>
+
+<div class="absolute pt-20 -z-10" >
+
+    <div class="h-screen w-screen bg-gray-300" >
+        <div class="py-12 ">
+            
+        
+        <div class="max-w-md mx-auto bg-gray-100 shadow-lg rounded-lg  md:max-w-5xl " style="min-height: 80vh;max-height: 80vh;box-shadow: 0 0 25px gray;">
+            <div class="md:flex ">
+                <div class="w-full p-4 px-5 py-5">
+    
+                    <div class="md:grid md:grid-cols-3 gap-2 ">
+    
+                        <div class="col-span-2 p-5">
+    
+                            <h1 class="text-2xl font-medium pb-4 ">Shopping Cart</h1>
+<style>
+    .item_box::-webkit-scrollbar{
+        display: none;
+    }
+</style>
+
+    <div class=" overflow-scroll border-2 rounded-md item_box" style="box-shadow: 0 0 15px rgb(95, 94, 94) ;padding-top: 2px ;padding-left: 4px; padding-right: 4px;height:30rem;scroll-behavior: smooth;overflow-x: hidden;">
+    <table>
+        {% for cart_item in cart_items %}
+        <tr>
+                            <div class="flex justify-between items-center mt-2 p-2 border-violet-300 border-2 rounded-lg" style="box-shadow:
+                            0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+                            0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+                            0 12.5px 10px rgba(0, 0, 0, 0.06)">
+
+                                <div class="flex  items-center ">
+                                    <img src="{{ cart_item.product.image.url }}" style="height: 60px; width: 60px;" class="rounded-full object-cover border-2 border-green-300">
+
+                                    <div class="flex flex-col ml-3">
+                                        <span class="md:text-md font-medium">{{ cart_item.product.product_name }}</span>
+                                        <span class="text-xs font-light text-gray-400">Category: {{ cart_item.product.category }} </span>
+                                        
+                                    </div>
+    
+                                    
+                                </div>
+    
+                                <div class="flex justify-center items-center">
+                                    
+                                    <div class="pr-8 flex ">
+                                        <a href="{% url 'remove_cart' cart_item.product.id %}"> <span class="font-semibold">-</span> </a>
+                                        <input type="text" class="focus:outline-none bg-gray-100 border text-center h-6 w-10 rounded text-sm px-2 mx-2" value="{{ cart_item.quantity }}">
+                                        <a href="{% url 'add_cart' cart_item.product.id %}"> <span class="font-semibold">+</span> </a>
+                                    </div>
+    
+                                    <div class="pr-8 ">
+                                        
+                                        <span class="text-xs font-medium">₹ {% widthratio cart_item.product.price 1 cart_item.quantity %}</span>
+                                    </div>
+                                    <div>
+                                        <a href="{% url 'delete_cart' cart_item.product.id %}"><i class="gg-close-o opacity-60"></i></a>
+                                    </div>
+    
+                                </div>
+                                
+                            </div>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+
+              
+                        </div>
+
+<div class=" pl-5 pt-5 pb-6 pr-5 bg-gray-800 rounded overflow-visible" style="min-height:50vh;max-height: 50vh; box-shadow: 0 0 15px rgb(95, 94, 94);">
+<center>
+    <span class="text-white align-middle text-xl" style="font-family: lato;">Order Summary</span>
+</center>
+
+<div class="text-white pt-7 overflow-y-scroll mb-2" style="height: 70%;">
+    <table class="" style=" width: 100%;">
+        <tr class="text-center">
+            <td class="">
+                <span>ITEM</span>
+            </td>
+            <td>
+                <span>QUANTITY</span>
+            </td>
+            <td>
+                <span>PRICE</span>
+            </td>
+            <Td>
+                <span>TOTAL</span>
+            </Td>
+        </tr>
+    {% for cart_item in cart_items %}
+    <tr class="text-center">
+        <td class="">
+            <span>{{ cart_item.product.product_name }}</span>
+        </td>
+        <td>
+            <span>{{ cart_item.quantity }}</span>
+        </td>
+        <td>
+            <span>{{ cart_item.product.price }}</span>
+        </td>
+        <td>
+            <span>{% widthratio cart_item.product.price 1 cart_item.quantity %}</span>
+        </td>
+    </tr>
+    {% endfor %}
+    </table>
+</div>
+<div class="mb-2 text-right mr-4">
+<span class="text-white">Grand Total: ₹ {{ total}}</span>
+</div>
+
+        <button class="h-12 w-full bg-blue-500 rounded focus:outline-none text-white hover:bg-blue-600" style="font-family: lato;">
+            Check Out
+        </button>
+
+        <div class="border-2 mt-12 bg-green-200 p-4 border-slate-500 rounded-md" style="box-shadow: 0 0 15px gray;">
+        <a href="{% url 'store' %}">
+        <button class="h-12 w-full bg-violet-500 rounded focus:outline-none text-white hover:bg-violet-600" style="font-family: lato;">
+            Continue Shopping
+        </button>
+        </a>
+        </div>
+    </div>
+            </div>              
+               </div>
+              
+            </div>
+            
+        </div>
+        </div>
+    </div>
+
+
+
+</div>
+{% endblock %}
