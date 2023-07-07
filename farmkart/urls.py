@@ -26,4 +26,4 @@ urlpatterns = [
     path('store/', include('store.urls')),
     path('aboutus/', include('about_us_farm.urls')),
     path('account/',include('accounts.urls')),
-] + static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root= settings.STATICFILES_DIRS)
+] + static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT) 
