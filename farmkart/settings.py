@@ -149,8 +149,3 @@ MESSAGE_TAGS = {
 
 }
 
-EMAIL_HOST = "smtp.gmail.com"
-EMAIL_PORT = 587
-EMAIL_HOST_USER = "beyondanime007@gmail.com"
-EMAIL_HOST_PASSWORD = "Wolverine@22"
-EMAIL_USE_TLS = True
