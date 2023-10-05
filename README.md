@@ -11,7 +11,7 @@
 - Tailwind CSS Styling: The project's user interface is enriched with the elegant and responsive design elements of Tailwind CSS, ensuring a seamless and visually appealing user experience.
 
 - SQLite3 Database: The use of an SQLite3 database ensures data integrity and efficiency while keeping the project lightweight and easily deployable.
-
+-----------------------------------------------------------------------------------------------------------------------------
 > Technologies Used
 > - Django 4.0
 > - Tailwind CSS
