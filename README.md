@@ -12,6 +12,10 @@
 
 - SQLite3 Database: The use of an SQLite3 database ensures data integrity and efficiency while keeping the project lightweight and easily deployable.
 
+> Technologies Used
+> - Django 4.0
+> - Tailwind CSS
+> - sqlite3 
 
 
 ![FarmKart _ Fresh Farm Produce - Brave 09-Jan-23 7_57_40 AM](https://github.com/Void-Monarch/Farmkart/assets/102967317/f173f842-b380-4f21-ac25-f9c8492d9be1)
