@@ -1,8 +1,17 @@
 # Farmkart
 
-## The project is django based 
+## Project Overview:
+>FarmKart is a user-friendly e-commerce website designed to bridge the gap between farmers and consumers. It provides a digital marketplace where farmers can list and sell their fresh produce and agricultural products directly to customers. By eliminating intermediaries, FarmKart aims to empower farmers, provide consumers with high-quality farm-fresh products, and promote sustainable agriculture.
 
-> Technologies Used - django 4.0 - TailWind Css 
+>Key Features:
+
+>E-commerce Platform: FarmKart offers a fully functional e-commerce platform with features such as product listings, shopping cart, secure payment processing, and order tracking.
+
+>Tailwind CSS Styling: The project's user interface is enriched with the elegant and responsive design elements of Tailwind CSS, ensuring a seamless and visually appealing user experience.
+
+>SQLite3 Database: The use of an SQLite3 database ensures data integrity and efficiency while keeping the project lightweight and easily deployable.
+
+
 
 ![FarmKart _ Fresh Farm Produce - Brave 09-Jan-23 7_57_40 AM](https://github.com/Void-Monarch/Farmkart/assets/102967317/f173f842-b380-4f21-ac25-f9c8492d9be1)
 
