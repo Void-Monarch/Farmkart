@@ -2,11 +2,8 @@
 
 ## The project is django based | Install django on your machine using PIP cmd [ pip install django ]
 
-
-##########################
-
-!!! by : Harsh Parashar 
-!!! Username : Void-Monarch
+### Technologies Used
+> - django 4.0
 
 ![FarmKart _ Fresh Farm Produce - Brave 09-Jan-23 7_57_40 AM](https://github.com/Void-Monarch/Farmkart/assets/102967317/f173f842-b380-4f21-ac25-f9c8492d9be1)
 
