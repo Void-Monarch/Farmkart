@@ -1,5 +1,5 @@
 # Farmkart
-Greetings! I am thrilled to introduce you to my FarmKart project, a web-based e-commerce platform developed during my third semester. This project, powered by Django and styled with Tailwind CSS, utilizes an SQLite3 database to connect farmers with customers, simplifying the process of selling farm products directly to consumers.
+> Greetings! I am thrilled to introduce you to my FarmKart project, a web-based e-commerce platform developed during my third semester. This project, powered by Django and styled with Tailwind CSS, utilizes an SQLite3 database to connect farmers with customers, simplifying the process of selling farm products directly to consumers.
 
 ## Project Overview:
 > FarmKart is a user-friendly e-commerce website designed to bridge the gap between farmers and consumers. It provides a digital marketplace where farmers can list and sell their fresh produce and agricultural products directly to customers. By eliminating intermediaries, FarmKart aims to empower farmers, provide consumers with high-quality farm-fresh products, and promote sustainable agriculture.
